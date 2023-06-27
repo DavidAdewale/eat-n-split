@@ -49,6 +49,8 @@ export default function App() {
           : friend
       )
     );
+
+    setSelectedFriend(null);
   }
 
   return (
@@ -175,10 +177,6 @@ function FormSplitBill({ selectedFriend, onSplitBill }) {
     if (!bill || !paidByUser) return;
 
     onSplitBill(whoIsPaying === 'user' ? paidByFriend : -paidByUser);
-
-    setBill('');
-    setPaidByUser('');
-    setWhoIsPaying('user');
   }
 
   return (
