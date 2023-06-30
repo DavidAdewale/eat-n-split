@@ -73,6 +73,7 @@ export default function App() {
         <FormSplitBill
           selectedFriend={selectedFriend}
           onSplitBill={handleSplitBill}
+          key={selectedFriend.id}
         />
       )}
     </div>
@@ -185,7 +186,7 @@ function FormSplitBill({ selectedFriend, onSplitBill }) {
 
       <label>💰 Bill Value</label>
       <input
-        type="text"
+        type="number"
         value={bill}
         onChange={(e) => setBill(+e.target.value)}
       />
